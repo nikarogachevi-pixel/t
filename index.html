@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy Anime — Вкусное аниме каждый день</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta property="og:url" content="https://nikatest.github.io/yummy-anime/" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0e0f14; color: #f0f3fa; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #2a2f3a; flex-wrap: wrap; }
+        .logo { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #ffb347, #ff6b6b); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .logo i { color: #ff7e5e; background: none; -webkit-background-clip: unset; }
+        .nav a { color: #ccc; text-decoration: none; margin-left: 25px; transition: 0.2s; }
+        .nav a:hover { color: #ff7e5e; }
+        .hero { background: linear-gradient(120deg, #1a1f2e, #0f111a); margin: 30px 0; border-radius: 30px; padding: 40px; text-align: center; }
+        .hero h2 { font-size: 32px; margin-bottom: 10px; }
+        .search { background: #1a1e26; border-radius: 50px; padding: 5px; display: inline-flex; width: 100%; max-width: 400px; margin-top: 20px; }
+        .search input { flex: 1; background: none; border: none; padding: 12px 20px; color: white; outline: none; }
+        .search button { background: #ff7e5e; border: none; border-radius: 50px; padding: 10px 25px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .search button:hover { background: #f25c3e; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; }
+        .card { background: rgba(26, 30, 38, 0.9); border-radius: 25px; padding: 20px; border: 1px solid #2a2f3a; }
+        .card h3 { margin-bottom: 15px; border-left: 4px solid #ff7e5e; padding-left: 12px; }
+        .anime-item { padding: 12px 0; border-bottom: 1px solid #2a2f3a; display: flex; justify-content: space-between; align-items: center; }
+        .badge { background: #2d2f3e; padding: 4px 12px; border-radius: 20px; font-size: 12px; color: #ffcd94; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0; }
+        .info-card { background: #141821; border-radius: 25px; padding: 24px; border: 1px solid #232833; }
+        .info-card h3 { margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .staff { display: flex; gap: 15px; align-items: center; margin: 15px 0; }
+        .avatar { width: 55px; height: 55px; background: linear-gradient(135deg, #ff7e5e, #ffb347); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+        .photo-grid { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .photo { width: 100px; text-align: center; }
+        .photo img { width: 100px; height: 100px; object-fit: cover; border-radius: 20px; background: #2e3543; }
+        .rules-list { list-style: none; }
+        .rules-list li { margin: 12px 0; display: flex; gap: 10px; align-items: center; }
+        .news-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #2a2f3a; }
+        .news-date { font-weight: 600; color: #ffb347; }
+        footer { text-align: center; padding: 30px 0; border-top: 1px solid #2a2f3a; margin-top: 30px; color: #888; }
+        .footer-copy { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; align-items: center; }
+        @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } .header { flex-direction: column; gap: 15px; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo"><i class="fas fa-candy-cane"></i> YUMMY ANIME</div>
+        <div class="nav"><a href="#">Главная</a><a href="#">Каталог</a><a href="#">Онгоинги</a><a href="#">Топ YUMMY</a></div>
+    </div>
+
+    <div class="hero">
+        <h2>🍜 НАЙТИ АНИМЕ ПО НАЗВАНИЮ</h2>
+        <p>Ищете конкретный тайтл? Вкусный поиск по базе Yummy Anime</p>
+        <div class="search"><input type="text" id="searchInput" placeholder="Например: Доктор Стоун, Виктория..."><button id="searchBtn"><i class="fas fa-search"></i> Искать</button></div>
+    </div>
+
+    <div class="grid-2">
+        <div class="card"><h3><i class="fas fa-leaf"></i> АНИМЕ ВЕСЕННЕГО СЕЗОНА</h3>
+            <div class="anime-item"><span>🌙 Виктория: Меч и жезл 2</span><span class="badge">Топ сезона</span></div>
+            <div class="anime-item"><span>🌸 Я подружился со второй самой симпатичной дев...</span><span class="badge">Романтика</span></div>
+            <div class="anime-item"><span>🌾 Фермерская жизнь в ином мире 2</span><span class="badge">Исекай</span></div>
+            <div class="anime-item"><span>⚡ Доктор Стоун: Научное будущее! Часть 3</span><span class="badge">Научпоп</span></div>
+            <div class="anime-item"><span>🛡️ Похоже, сильнейшая профессия — это не герой</span><span class="badge">Фэнтези</span></div>
+            <div class="anime-item"><span>🏮 Дорогодор 2</span><span class="badge">Экшен</span></div>
+            <div class="anime-item"><span>🌀 Цугли загробного мира</span><span class="badge">Сверхъестественное</span></div>
+        </div>
+        <div class="card"><h3><i class="fas fa-sync-alt"></i> ОБНОВЛЕНИЯ АНИМЕ</h3>
+            <div class="anime-item"><div><span>❄️ Ледяная стена</span><div style="font-size:12px;color:#b9ad93;">9-я серия • Kazoku Project</div></div><span class="badge">Новая</span></div>
+            <div class="anime-item"><div><span>🔥 Непревзойденный на пути алхимии</span><div style="font-size:12px;color:#b9ad93;">178-я серия • AniMy</div></div><span class="badge">Топ</span></div>
+            <div class="anime-item"><div><span>🍺 Ботан Камина, пьяная внешность</span><div style="font-size:12px;color:#b9ad93;">8-я серия • Kazoku Project</div></div><span class="badge">Озвучка</span></div>
+            <div class="anime-item"><div><span>🕵️ Вас снова убили, мистер детектив</span><div style="font-size:12px;color:#b9ad93;">9-я серия • AniDUB</div></div><span class="badge">Детектив</span></div>
+            <div class="anime-item"><div><span>💊 Зависимая девушка: Передозировка</span><div style="font-size:12px;color:#b9ad93;">7-я серия • Kazoku Project</div></div><span class="badge">Драма</span></div>
+        </div>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card"><h3><i class="fas fa-images"></i> YUMMY GALLERY</h3>
+            <div class="photo-grid">
+                <div class="photo"><img src="https://placehold.co/100x100/ff7e5e/white?text=Anime1"><span>Виктория</span></div>
+                <div class="photo"><img src="https://placehold.co/100x100/ffb347/white?text=Anime2"><span>Доктор Стоун</span></div>
+                <div class="photo"><img src="https://placehold.co/100x100/ff6b9d/white?text=Anime3"><span>Фермер</span></div>
+                <div class="photo"><img src="https://placehold.co/100x100/ff7e5e/white?text=Yummy"><span>Маскот</span></div>
+            </div>
+        </div>
+        <div class="info-card"><h3><i class="fas fa-gavel"></i> ПРАВИЛА YUMMY</h3>
+            <ul class="rules-list">
+                <li><i class="fas fa-heart" style="color:#ff7e5e;"></i> Уважай других зрителей и команду</li>
+                <li><i class="fas fa-comment"></i> Не спойлери без предупреждения</li>
+                <li><i class="fas fa-dragon"></i> Обсуждаем аниме культурно и вкусно</li>
+                <li><i class="fas fa-crown"></i> Поддерживай авторов и студии</li>
+            </ul>
+        </div>
+        <div class="info-card"><h3><i class="fas fa-users"></i> YUMMY STAFF</h3>
+            <div class="staff"><div class="avatar">🍣</div><div><strong>Рин Тогава</strong><br>Главный редактор</div></div>
+            <div class="staff"><div class="avatar">🍜</div><div><strong>Мияби Коизуми</strong><br>Шеф-переводчик</div></div>
+            <div class="staff"><div class="avatar">🍙</div><div><strong>Харуки Танака</strong><br>Модератор & новостник</div></div>
+            <div class="staff"><div class="avatar">🥟</div><div><strong>Лилия "Мисс Yummy"</strong><br>Дизайнер</div></div>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="card"><h3><i class="fas fa-newspaper"></i> НОВОСТИ</h3>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> Анонс «Одарённый»</span></div>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> «Путь Баки | Часть 2»: трейлер</span></div>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> «Пыль Мёбиуса»: постер</span></div>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> «Реинкарнация безработного 3»</span></div>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> «Кот и дракон»: дата выхода</span></div>
+        </div>
+        <div class="card"><h3><i class="fas fa-bell"></i> ВСЕ ОБНОВЛЕНИЯ</h3>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> Анонс «Одарённый» (трейлер)</span></div>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> «Путь Баки | Часть 2»</span></div>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> «Пыль Мёбиуса» — новый визуал</span></div>
+            <div class="news-item"><span class="news-date">04 Июн</span><span><strong>аниме</strong> «Кот и дракон»: премьера</span></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-copy">
+            <i class="fas fa-copyright"></i> 2025 Yummy Anime — Все права вкусно защищены.
+            <span>🍥 <strong>yummyani</strong> — твой сладкий гид по миру аниме 🍥</span>
+        </div>
+    </footer>
+</div>
+<script>
+    document.getElementById("searchBtn").onclick = function() {
+        let query = document.getElementById("searchInput").value.trim();
+        if(query) alert("🔍 Поиск: " + query + "\nРезультаты появятся в ближайшее время!");
+        else alert("🍣 Введи название аниме!");
+    };
+    document.getElementById("searchInput").addEventListener("keypress", function(e) {
+        if(e.key === "Enter") document.getElementById("searchBtn").click();
+    });
+</script>
+</body>
+</html>
